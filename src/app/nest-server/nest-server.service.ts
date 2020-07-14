@@ -92,7 +92,7 @@ export class NestServerService {
     const hosts = [
       'server.' + hostname,
       hostname + '/server',
-      hostname + ':5000'
+      hostname + ':7000'
     ]
     hosts.forEach(host => {
       this.ping(protocol + '//' + host)
@@ -128,7 +128,7 @@ export class NestServerService {
     var hostname = host.split(':')[0]
     config['host'] = host.split(':')[0];
     config['secure'] = resp.url.startsWith('https:');
-    config['port'] = resp.url.includes(':5000') ? '5000' : '';
+    config['port'] = resp.url.includes(':7000') ? '7000' : '';
     this._nestServerConfigService.save()
   }
 
